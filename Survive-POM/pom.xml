@@ -11,7 +11,7 @@
         <module>Survive-Java-Core</module>
         <module>Survive-Java-API</module>
     <module>Survive-REST-Client</module>
-        <module>../../SOAP_CLIENT</module>
+        <module>Survive-SOAP-Client</module>
     </modules>   
 
 </project>

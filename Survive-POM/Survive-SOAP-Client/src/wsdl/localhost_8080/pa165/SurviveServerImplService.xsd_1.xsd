@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.4-b01-. --><xs:schema xmlns:tns="http://ws.pa165.fi.muni.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.pa165.fi.muni.com/">
+
+<xs:element name="areaDto" type="tns:areaDto"></xs:element>
+
+<xs:element name="monsterAreaDto" type="tns:monsterAreaDto"></xs:element>
+
+<xs:element name="monsterDto" type="tns:monsterDto"></xs:element>
+
+<xs:element name="monsterManagerdelete" type="tns:monsterManagerdelete"></xs:element>
+
+<xs:element name="monsterManagerdeleteResponse" type="tns:monsterManagerdeleteResponse"></xs:element>
+
+<xs:element name="monsterManagerfindAll" type="tns:monsterManagerfindAll"></xs:element>
+
+<xs:element name="monsterManagerfindAllResponse" type="tns:monsterManagerfindAllResponse"></xs:element>
+
+<xs:element name="monsterManagerfindById" type="tns:monsterManagerfindById"></xs:element>
+
+<xs:element name="monsterManagerfindByIdResponse" type="tns:monsterManagerfindByIdResponse"></xs:element>
+
+<xs:element name="monsterManagersave" type="tns:monsterManagersave"></xs:element>
+
+<xs:element name="monsterManagersaveResponse" type="tns:monsterManagersaveResponse"></xs:element>
+
+<xs:element name="monsterManagerupdate" type="tns:monsterManagerupdate"></xs:element>
+
+<xs:element name="monsterManagerupdateResponse" type="tns:monsterManagerupdateResponse"></xs:element>
+
+<xs:element name="monsterWeaponDto" type="tns:monsterWeaponDto"></xs:element>
+
+<xs:element name="monsterweaponManagerdelete" type="tns:monsterweaponManagerdelete"></xs:element>
+
+<xs:element name="monsterweaponManagerdeleteResponse" type="tns:monsterweaponManagerdeleteResponse"></xs:element>
+
+<xs:element name="monsterweaponManagerfindAll" type="tns:monsterweaponManagerfindAll"></xs:element>
+
+<xs:element name="monsterweaponManagerfindAllResponse" type="tns:monsterweaponManagerfindAllResponse"></xs:element>
+
+<xs:element name="monsterweaponManagerfindById" type="tns:monsterweaponManagerfindById"></xs:element>
+
+<xs:element name="monsterweaponManagerfindByIdResponse" type="tns:monsterweaponManagerfindByIdResponse"></xs:element>
+
+<xs:element name="monsterweaponManagerfindByMonsterId" type="tns:monsterweaponManagerfindByMonsterId"></xs:element>
+
+<xs:element name="monsterweaponManagerfindByMonsterIdResponse" type="tns:monsterweaponManagerfindByMonsterIdResponse"></xs:element>
+
+<xs:element name="monsterweaponManagerfindByWeaponId" type="tns:monsterweaponManagerfindByWeaponId"></xs:element>
+
+<xs:element name="monsterweaponManagerfindByWeaponIdResponse" type="tns:monsterweaponManagerfindByWeaponIdResponse"></xs:element>
+
+<xs:element name="monsterweaponManagersave" type="tns:monsterweaponManagersave"></xs:element>
+
+<xs:element name="monsterweaponManagersaveResponse" type="tns:monsterweaponManagersaveResponse"></xs:element>
+
+<xs:element name="monsterweaponManagerupdate" type="tns:monsterweaponManagerupdate"></xs:element>
+
+<xs:element name="monsterweaponManagerupdateResponse" type="tns:monsterweaponManagerupdateResponse"></xs:element>
+
+<xs:element name="weaponDto" type="tns:weaponDto"></xs:element>
+
+<xs:element name="weaponManagerdelete" type="tns:weaponManagerdelete"></xs:element>
+
+<xs:element name="weaponManagerdeleteResponse" type="tns:weaponManagerdeleteResponse"></xs:element>
+
+<xs:element name="weaponManagerfindAll" type="tns:weaponManagerfindAll"></xs:element>
+
+<xs:element name="weaponManagerfindAllResponse" type="tns:weaponManagerfindAllResponse"></xs:element>
+
+<xs:element name="weaponManagerfindById" type="tns:weaponManagerfindById"></xs:element>
+
+<xs:element name="weaponManagerfindByIdResponse" type="tns:weaponManagerfindByIdResponse"></xs:element>
+
+<xs:element name="weaponManagersave" type="tns:weaponManagersave"></xs:element>
+
+<xs:element name="weaponManagersaveResponse" type="tns:weaponManagersaveResponse"></xs:element>
+
+<xs:element name="weaponManagerupdate" type="tns:weaponManagerupdate"></xs:element>
+
+<xs:element name="weaponManagerupdateResponse" type="tns:weaponManagerupdateResponse"></xs:element>
+
+<xs:complexType name="monsterManagerfindById">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterManagerfindByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:monsterDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterDto">
+<xs:sequence>
+<xs:element name="agility" type="xs:double" minOccurs="0"></xs:element>
+<xs:element name="dangerLevel" type="xs:double" minOccurs="0"></xs:element>
+<xs:element name="description" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="efficiencies" type="tns:monsterWeaponDto" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="height" type="xs:double" minOccurs="0"></xs:element>
+<xs:element name="id" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="imagePath" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="locations" type="tns:monsterAreaDto" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="monsterClass" type="tns:monsterClass" minOccurs="0"></xs:element>
+<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="stamina" type="xs:double" minOccurs="0"></xs:element>
+<xs:element name="strength" type="xs:double" minOccurs="0"></xs:element>
+<xs:element name="weight" type="xs:double" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterWeaponDto">
+<xs:sequence>
+<xs:element name="damage" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="description" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="efficiency" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="hitRate" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="monster" type="tns:monsterDto" minOccurs="0"></xs:element>
+<xs:element name="weapon" type="tns:weaponDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponDto">
+<xs:sequence>
+<xs:element name="caliber" type="xs:double" minOccurs="0"></xs:element>
+<xs:element name="description" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="efficiencies" type="tns:monsterWeaponDto" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="id" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="range" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="rounds" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="weaponClass" type="tns:weaponClass" minOccurs="0"></xs:element>
+<xs:element name="weaponType" type="tns:weaponType" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterAreaDto">
+<xs:sequence>
+<xs:element name="area" type="tns:areaDto" minOccurs="0"></xs:element>
+<xs:element name="monster" type="tns:monsterDto" minOccurs="0"></xs:element>
+<xs:element name="monsterQuantity" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="areaDto">
+<xs:sequence>
+<xs:element name="description" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="id" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="locations" type="tns:monsterAreaDto" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="terrain" type="tns:terrainType" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterManagerfindAll">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterManagerfindAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:monsterDto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerfindByWeaponId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerfindByWeaponIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:monsterWeaponDto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponManagersave">
+<xs:sequence>
+<xs:element name="arg0" type="tns:weaponDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponManagersaveResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponManagerupdate">
+<xs:sequence>
+<xs:element name="arg0" type="tns:weaponDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponManagerupdateResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerupdate">
+<xs:sequence>
+<xs:element name="arg0" type="tns:monsterWeaponDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerupdateResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerfindAll">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerfindAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:monsterWeaponDto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerfindByMonsterId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerfindByMonsterIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:monsterWeaponDto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterManagerdelete">
+<xs:sequence>
+<xs:element name="arg0" type="tns:monsterDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterManagerdeleteResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerdelete">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:long" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerdeleteResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterManagersave">
+<xs:sequence>
+<xs:element name="arg0" type="tns:monsterDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterManagersaveResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerfindById">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="arg1" type="xs:long" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagerfindByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:monsterWeaponDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponManagerfindById">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponManagerfindByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:weaponDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponManagerfindAll">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponManagerfindAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:weaponDto" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterManagerupdate">
+<xs:sequence>
+<xs:element name="arg0" type="tns:monsterDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterManagerupdateResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponManagerdelete">
+<xs:sequence>
+<xs:element name="arg0" type="tns:weaponDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="weaponManagerdeleteResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagersave">
+<xs:sequence>
+<xs:element name="arg0" type="tns:monsterWeaponDto" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="monsterweaponManagersaveResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="weaponClass">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Ranged"></xs:enumeration>
+<xs:enumeration value="Melee"></xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="weaponType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Gun"></xs:enumeration>
+<xs:enumeration value="Blade"></xs:enumeration>
+<xs:enumeration value="Blunt"></xs:enumeration>
+<xs:enumeration value="Explosive"></xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="terrainType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="OCEANIC"></xs:enumeration>
+<xs:enumeration value="DESERT"></xs:enumeration>
+<xs:enumeration value="SNOW"></xs:enumeration>
+<xs:enumeration value="JUNGLE"></xs:enumeration>
+<xs:enumeration value="SAVANNA"></xs:enumeration>
+<xs:enumeration value="MOUNTAIN"></xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="monsterClass">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Zombie"></xs:enumeration>
+<xs:enumeration value="Robot"></xs:enumeration>
+<xs:enumeration value="Mutant"></xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

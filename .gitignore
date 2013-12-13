@@ -47,3 +47,4 @@ nb-configuration.xml
 !/Survive-POM/Survive-Java-API/nb-configuration.xml
 /Survive-POM/Survive-REST-Client/target/
 /Survive-POM/Surive-Commons/nbproject/private/
+/Survive-POM/Survive-SOAP-Client/target/

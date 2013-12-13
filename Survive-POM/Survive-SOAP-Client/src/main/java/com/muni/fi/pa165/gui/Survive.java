@@ -1243,16 +1243,14 @@ public class Survive extends javax.swing.JFrame {
        	monster.setName(dialog_monsters_nameInput.getText());
       	monster.setDescription(dialog_monsters_descriptionInput.getText());
     	monster.setImagePath(dialog_monsters_imagePathInput.getText());
-        
-        monster.setMonsterClass((MonsterClass) dialog_monsters_monsterClassInput.getSelectedItem());
-        
+               
        try {
-            if ((dialog_monsters_heightInput.getText()).equals("")) {monster.setHeight(Double.parseDouble(dialog_monsters_heightInput.getText()));}
-            if ((dialog_monsters_agilityInput.getText()).equals("")){ monster.setAgility(Double.parseDouble(dialog_monsters_agilityInput.getText()));}
-            if ((dialog_monsters_strengthInput.getText()).equals("")) {monster.setStrength(Double.parseDouble(dialog_monsters_strengthInput.getText()));}
-            if ((dialog_monsters_weightInput.getText()).equals("")) {monster.setWeight(Double.parseDouble(dialog_monsters_weightInput.getText()));}
-            if ((dialog_monsters_staminaInput.getText()).equals("")) {monster.setStamina(Double.parseDouble(dialog_monsters_staminaInput.getText()));}
-            if ((dialog_monsters_dangerLevelInput.getText()).equals("")) { monster.setDangerLevel(Double.parseDouble(dialog_monsters_dangerLevelInput.getText()));}
+            if (!(dialog_monsters_heightInput.getText()).equals("")) {monster.setHeight(Double.parseDouble(dialog_monsters_heightInput.getText()));}
+            if (!(dialog_monsters_agilityInput.getText()).equals("")){ monster.setAgility(Double.parseDouble(dialog_monsters_agilityInput.getText()));}
+            if (!(dialog_monsters_strengthInput.getText()).equals("")) {monster.setStrength(Double.parseDouble(dialog_monsters_strengthInput.getText()));}
+            if (!(dialog_monsters_weightInput.getText()).equals("")) {monster.setWeight(Double.parseDouble(dialog_monsters_weightInput.getText()));}
+            if (!(dialog_monsters_staminaInput.getText()).equals("")) {monster.setStamina(Double.parseDouble(dialog_monsters_staminaInput.getText()));}
+            if (!(dialog_monsters_dangerLevelInput.getText()).equals("")) { monster.setDangerLevel(Double.parseDouble(dialog_monsters_dangerLevelInput.getText()));}
    
         } catch(IllegalArgumentException e) {
             String msg = "Monster data wrong format";
@@ -1274,12 +1272,14 @@ public class Survive extends javax.swing.JFrame {
                 client.monsterManagerupdate(monster);
                 monsterTableModel.removeMonster(monsterCached);
                 monsterTableModel.addMonster(monster);
+                
             }
             dialog_monsters.setVisible(false);
         } catch (Exception ex) {
             String msg = "User request failed";
             LOGGER.log(Level.INFO, msg);
         }
+         
     }//GEN-LAST:event_dialog_monsters_submitActionPerformed
 
     private void dialog_monsters_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dialog_monsters_cancelActionPerformed

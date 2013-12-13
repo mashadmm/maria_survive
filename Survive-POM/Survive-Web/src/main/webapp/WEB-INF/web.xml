@@ -19,7 +19,6 @@
     </listener>
     <servlet>
         <servlet-name>Jersey Spring</servlet-name>
-        <!--servlet-class>com.sun.ws.rest.spring.SpringServlet</servlet-class-->
         <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
         <init-param>
             <param-name>com.sun.jersey.config.property.resourceConfigClass</param-name>
@@ -54,7 +53,7 @@
         <init-param>
             <description>where Stripes searches for ActionBeans</description>
             <param-name>ActionResolver.Packages</param-name>
-            <param-value>com.muni.fi.pa165</param-value>
+            <param-value>com.muni.fi.pa165.actions</param-value>
         </init-param>
         <init-param>
             <description>locales and encodings in the app</description>
@@ -84,15 +83,6 @@
         <dispatcher>FORWARD</dispatcher>
         <dispatcher>INCLUDE</dispatcher>
     </filter-mapping>
-    <!--    <servlet>
-        <servlet-name>javax.ws.rs.core.Application</servlet-name>
-    </servlet>
- 
-
-    <servlet-mapping>
-        <servlet-name>javax.ws.rs.core.Application</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
-    </servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>SurviveServerImplService</servlet-name>
         <url-pattern>/SurviveServerImplService</url-pattern>

@@ -1,8 +1,9 @@
 package com.muni.fi.pa165.actions.weapon;
 
 import com.muni.fi.pa165.actions.base.BaseActionBean;
-import com.muni.fi.pa165.service.WeaponService;
 import com.muni.fi.pa165.dto.WeaponDto;
+import com.muni.fi.pa165.service.WeaponService;
+import java.util.List;
 import net.sourceforge.stripes.action.*;
 import net.sourceforge.stripes.controller.LifecycleStage;
 import net.sourceforge.stripes.integration.spring.SpringBean;
@@ -13,8 +14,6 @@ import net.sourceforge.stripes.validation.ValidationErrors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
-
 /**
  * Stripes ActionBean for handling weapon operations.
  *
@@ -24,10 +23,17 @@ import java.util.List;
 public class WeaponActionBean extends BaseActionBean implements ValidationErrorHandler {
 
     final static Logger log = LoggerFactory.getLogger(WeaponActionBean.class);
+    /**
+     *
+     */
     @SpringBean
     protected WeaponService weaponService;
     private List<WeaponDto> weapons;
 
+    /**
+     *
+     * @return
+     */
     @DefaultHandler
     public Resolution list() {
         log.debug("list()");
@@ -35,6 +41,10 @@ public class WeaponActionBean extends BaseActionBean implements ValidationErrorH
         return new ForwardResolution("/weapon/list.jsp");
     }
 
+    /**
+     *
+     * @return
+     */
     public List<WeaponDto> getWeapons() {
         return weapons;
     }
@@ -49,6 +59,10 @@ public class WeaponActionBean extends BaseActionBean implements ValidationErrorH
     })
     private WeaponDto weapon;
 
+    /**
+     *
+     * @return
+     */
     public Resolution add() {
         log.debug("add() weapon={}", weapon);
 
@@ -60,25 +74,43 @@ public class WeaponActionBean extends BaseActionBean implements ValidationErrorH
         return new RedirectResolution(this.getClass(), "list");
     }
 
+    /**
+     *
+     * @param errors
+     * @return
+     * @throws Exception
+     */
     @Override
     public Resolution handleValidationErrors(ValidationErrors errors) throws Exception {
         weapons = weaponService.findAll();
         return null;
     }
 
+    /**
+     *
+     * @return
+     */
     public WeaponDto getWeapon() {
         return weapon;
     }
 
+    /**
+     *
+     * @param weapon
+     */
     public void setWeapon(WeaponDto weapon) {
         this.weapon = weapon;
     }
 
+    /**
+     *
+     * @return
+     */
     public Resolution delete() {
 
         log.debug("delete({})", weapon.getId());
         try {
-            //weapon = weaponService.findById(weapon.getId());
+  
             weaponService.delete(weapon.getId());
         } catch (Exception ex) {
             log.error(ex.getMessage());
@@ -86,6 +118,9 @@ public class WeaponActionBean extends BaseActionBean implements ValidationErrorH
         return new RedirectResolution(this.getClass(), "list");
     }
 
+    /**
+     *
+     */
     @Before(stages = LifecycleStage.BindingAndValidation, on = {"edit", "save"})
     public void loadWeaponFromDatabase() {
         String ids = getContext().getRequest().getParameter("weapon.id");
@@ -95,11 +130,19 @@ public class WeaponActionBean extends BaseActionBean implements ValidationErrorH
         weapon = weaponService.findById(Long.parseLong(ids));
     }
 
+    /**
+     *
+     * @return
+     */
     public Resolution edit() {
         log.debug("edit() weapon={}", weapon);
         return new ForwardResolution("/weapon/edit.jsp");
     }
 
+    /**
+     *
+     * @return
+     */
     public Resolution save() {
 
         log.debug("save() weapon={}", weapon);
@@ -107,6 +150,10 @@ public class WeaponActionBean extends BaseActionBean implements ValidationErrorH
         return new RedirectResolution(this.getClass(), "list");
     }
 
+    /**
+     *
+     * @return
+     */
     public Resolution cancel() {
 
         log.debug("cancel");
